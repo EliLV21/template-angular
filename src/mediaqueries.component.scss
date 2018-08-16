@@ -1,0 +1,45 @@
+@media screen and (max-width: 400px){
+  nav{
+    .navbar-nav{
+      display: none !important;
+    }
+  }
+  .cont-title{
+    .title-name{
+      font-size: 50px !important;
+    }
+    .subtitle{
+      font-size: 20px !important;
+    }
+    .button-bg{
+      span{
+        font-size: 13px !important;
+      }
+    }
+  }
+  .tag-info{
+    width: 100% !important;
+    margin: 20px 0;
+    p{
+      font-size: 19px !important;
+      height: 140px;
+    }
+    span{
+      font-size: 15.5px !important;
+    }
+  }
+  .article-slider{
+    height: 500px;
+  }
+  .slide{
+    height: 300px;
+  }
+}
+
+.bg-dark{
+  color: #fff;
+  padding: .5rem 1rem !important;
+  p{
+    font-size: 12px !important;
+  }
+}

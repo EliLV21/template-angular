@@ -3,11 +3,11 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "http-server",
-    "lint": "tslint \"src/**/*.ts\"",
+    "start": "ng serve",
+    "build": "ng build",
     "test": "ng test",
-    "pree2e": "webdriver-manager update",
-    "e2e": "protractor",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
     "preinstall": "npm install -g http-server",
     "postinstall": "ng build && mv dist/* ."
   },
@@ -29,6 +29,8 @@
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",
     "jquery": "^3.3.1",
+    "karma-cli": "^1.0.1",
+    "ng-bootstrap-form-validation": "^2.1.0",
     "rxjs": "^6.0.0",
     "script-loader": "^0.7.2",
     "zone.js": "~0.8.26"

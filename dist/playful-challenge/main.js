@@ -92,11 +92,12 @@ var AppComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui/ui.module */ "./src/app/ui/ui.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./ui/ui.module */ "./src/app/ui/ui.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -109,22 +110,24 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [
-                _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]
+                _app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]
             ],
             imports: [
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbCarouselModule"].forRoot(),
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
-                _ui_ui_module__WEBPACK_IMPORTED_MODULE_1__["UiModule"],
-                _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"]
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_5__["NgbCarouselModule"].forRoot(),
+                _angular_forms__WEBPACK_IMPORTED_MODULE_4__["ReactiveFormsModule"],
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
+                _ui_ui_module__WEBPACK_IMPORTED_MODULE_2__["UiModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]
             ],
             providers: [],
-            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
+            bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_3__["AppComponent"]]
         })
     ], AppModule);
     return AppModule;
@@ -141,7 +144,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"article-slider\">\n  <ngb-carousel *ngIf=\"images\">\n  <ng-template ngbSlide>\n    <img [src]=\"images[0]\" alt=\"Random first slide\">\n  </ng-template>\n  <ng-template ngbSlide>\n    <img [src]=\"images[1]\" alt=\"Random second slide\">\n  </ng-template>\n  <ng-template ngbSlide>\n    <img [src]=\"images[2]\" alt=\"Random third slide\">\n  </ng-template>\n</ngb-carousel>\n</div>\n"
+module.exports = "<div class=\"article-slider row justify-content-md-center\">\n  <div class=\"col-sm-12 col-md-12 col-lg-10\">\n    <ngb-carousel *ngIf=\"images\">\n    <ng-template ngbSlide>\n      <img [src]=\"images[0]\" alt=\"Random first slide\">\n    </ng-template>\n    <ng-template ngbSlide>\n      <img [src]=\"images[1]\" alt=\"Random second slide\">\n    </ng-template>\n    <ng-template ngbSlide>\n      <img [src]=\"images[2]\" alt=\"Random third slide\">\n    </ng-template>\n  </ngb-carousel>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -152,7 +155,7 @@ module.exports = "<div class=\"article-slider\">\n  <ngb-carousel *ngIf=\"images
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".article-slider {\n  background-color: #f5f5f7;\n  width: 100%;\n  height: 700px;\n  padding-top: 90px; }\n\n.slide {\n  width: 80%;\n  margin-left: 10%;\n  padding-left: 18px; }\n"
+module.exports = ".article-slider {\n  background-color: #f5f5f7;\n  width: 100%;\n  height: 700px;\n  padding-top: 90px; }\n\n.slide {\n  width: 100%; }\n"
 
 /***/ }),
 
@@ -219,7 +222,7 @@ var ArticleSliderComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <nav class=\"navbar navbar-dark bg-dark mt-5 fixed-bottom\">\n  <div class=\"navbar-expand m-auto navbar-text\">\n    Made with <i class=\"fa fa-heart\"></i> by <a href=\"https://twitter.com/beeman_nl\">beeman</a>\n  </div>\n</nav> -->\n<div class=\"row navbar bg-dark\">\n  <div class=\"col-sm-5 col-md-5\">\n    <h4>Logo</h4>\n    <p>2017 Forma LLC.  All rights reserved.</p>\n  </div>\n  <div class=\"col-sm-3 col-md-3\">\n    <div class=\"row\">\n      <div class=\"col-sm-12 col-md-12\">\n        <p>Keep in touch with us</p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-2 col-md-2 text-center\">\n        <p><strong>fb</strong></p>\n      </div>\n      <div class=\"col-sm-2 col-md-2 text-center\">\n        <p><strong>tw</strong></p>\n      </div>\n      <div class=\"col-sm-2 col-md-2 text-center\">\n        <p><strong>vm</strong></p>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-4 col-md-4\">\n    <div class=\"row\">\n      <div class=\"col-sm-4 col-md-4 text-center\">\n        <p>Festival Programme</p>\n      </div>\n      <div class=\"col-sm-4 col-md-4 text-center\">\n        <p>Plan Your Experience</p>\n      </div>\n      <div class=\"col-sm-4 col-md-4 text-center\">\n        <p>Media</p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4 col-md-4 text-center\">\n        <p>Support the Festival</p>\n      </div>\n      <div class=\"col-sm-4 col-md-4 text-center\">\n        <p>About</p>\n      </div>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<!-- <nav class=\"navbar navbar-dark bg-dark mt-5 fixed-bottom\">\n  <div class=\"navbar-expand m-auto navbar-text\">\n    Made with <i class=\"fa fa-heart\"></i> by <a href=\"https://twitter.com/beeman_nl\">beeman</a>\n  </div>\n</nav> -->\n<div class=\"row navbar bg-dark\">\n  <div class=\"col-sm-5 col-md-5\">\n    <h4>Logo</h4>\n    <p>2017 Forma LLC.  All rights reserved.</p>\n  </div>\n  <div class=\"col-sm-12 col-md-12 col-lg-3\">\n    <div class=\"row\">\n      <div class=\"col-sm-12 col-md-12\">\n        <p>Keep in touch with us</p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4 col-md-4 col-lg-2 text-center\">\n        <p>fb</p>\n      </div>\n      <div class=\"col-sm-4 col-md-4 col-lg-2 text-center\">\n        <p>tw</p>\n      </div>\n      <div class=\"col-sm-4 col-md-4 col-lg-2 text-center\">\n        <p>vm</p>\n      </div>\n    </div>\n  </div>\n  <div class=\"col-sm-12 col-md-12 col-lg-4\">\n    <div class=\"row\">\n      <div class=\"col-sm-6 col-md-6 col-lg-4 text-center\">\n        <p>Festival Programme</p>\n      </div>\n      <div class=\"col-sm-6 col-md-6 col-lg-4 text-center\">\n        <p>Plan Your Experience</p>\n      </div>\n      <div class=\"col-sm-6 col-md-6 col-lg-4 text-center\">\n        <p>Media</p>\n      </div>\n    </div>\n    <div class=\"row\">\n      <div class=\"col-sm-4 col-md-4 text-center\">\n        <p>Support the Festival</p>\n      </div>\n      <div class=\"col-sm-4 col-md-4 text-center\">\n        <p>About</p>\n      </div>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -230,7 +233,7 @@ module.exports = "<!-- <nav class=\"navbar navbar-dark bg-dark mt-5 fixed-bottom
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".bg-dark {\n  color: #fff;\n  padding: 1rem 1.5rem; }\n  .bg-dark .col-sm-12 p {\n    font-size: 16px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.71;\n    letter-spacing: normal;\n    text-align: left; }\n  .bg-dark .col-sm-5 h4 {\n    height: 50px; }\n  .bg-dark .col-sm-5 p {\n    font-size: 14px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.27;\n    letter-spacing: normal;\n    text-align: left; }\n  .bg-dark .col-sm-4 p {\n    font-size: 13px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.27;\n    letter-spacing: normal;\n    text-align: left;\n    color: #ffffff; }\n"
+module.exports = ".bg-dark {\n  color: #fff;\n  padding: 1rem 1.5rem; }\n  .bg-dark .col-sm-12 p {\n    font-size: 15px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.71;\n    letter-spacing: normal;\n    text-align: left; }\n  .bg-dark .col-sm-5 h4 {\n    height: 50px; }\n  .bg-dark .col-sm-5 p {\n    font-size: 15px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.27;\n    letter-spacing: normal;\n    text-align: left; }\n  .bg-dark .col-sm-4 p {\n    font-size: 15px;\n    font-weight: normal;\n    font-style: normal;\n    font-stretch: normal;\n    line-height: 1.27;\n    letter-spacing: normal;\n    text-align: left;\n    color: #ffffff; }\n"
 
 /***/ }),
 
@@ -282,7 +285,7 @@ var FooterComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <form [form-group]=\"formValidate\" (ngsubmit)=\"onSubmit()\" id=\"form-validate\" novalidate>\n  <div class=\"form-group\">\n    <label for=\"\" class=\"center-block\">Name:</label>\n    <input type=\"text\" class=\"form-control\" formControlName=\"name\" id=\"\" placeholder=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\" class=\"center-block\">Email:</label>\n    <input type=\"text\" class=\"form-control\" formControlName=\"email\" id=\"\" placeholder=\"\">\n  </div>\n  <div class=\"form-group\">\n    <label for=\"\" class=\"center-block\">Text:</label>\n    <input type=\"text\" class=\"form-control\" formControlName=\"text\" id=\"\" placeholder=\"\">\n  </div>\n  <button type=\"submit\"\n      [disabled]=\"!contactForm.valid\" class=\"btn btn-success\">Save</button>\n</form> -->\n"
+module.exports = "<div class=\"form-validate row justify-content-md-center\">\n  <div class=\"col-sm-12 col-md-6\">\n    <form [formGroup]=\"registerForm\" (ngSubmit)=\"onSubmit()\">\n          <div class=\"form-group\">\n              <label>First Name</label>\n              <input type=\"text\" formControlName=\"firstName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.firstName.errors }\" />\n              <div *ngIf=\"submitted && f.firstName.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"f.firstName.errors.required\">First Name is required</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label>Last Name</label>\n              <input type=\"text\" formControlName=\"lastName\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.lastName.errors }\" />\n              <div *ngIf=\"submitted && f.lastName.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"f.lastName.errors.required\">Last Name is required</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label>Email</label>\n              <input type=\"text\" formControlName=\"email\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.email.errors }\" />\n              <div *ngIf=\"submitted && f.email.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"f.email.errors.required\">Email is required</div>\n                  <div *ngIf=\"f.email.errors.email\">Email must be a valid email address</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <label>Password</label>\n              <input type=\"password\" formControlName=\"password\" class=\"form-control\" [ngClass]=\"{ 'is-invalid': submitted && f.password.errors }\" />\n              <div *ngIf=\"submitted && f.password.errors\" class=\"invalid-feedback\">\n                  <div *ngIf=\"f.password.errors.required\">Password is required</div>\n                  <div *ngIf=\"f.password.errors.minlength\">Password must be at least 6 characters</div>\n              </div>\n          </div>\n          <div class=\"form-group\">\n              <button class=\"btn btn-primary\">Register</button>\n          </div>\n      </form>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -293,7 +296,7 @@ module.exports = "<!-- <form [form-group]=\"formValidate\" (ngsubmit)=\"onSubmit
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ""
+module.exports = ".form-validate {\n  width: 100%;\n  padding: 0;\n  margin: 0;\n  height: 500px; }\n"
 
 /***/ }),
 
@@ -314,6 +317,9 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 
 var FormValidateComponent = /** @class */ (function () {
     function FormValidateComponent() {
@@ -325,7 +331,8 @@ var FormValidateComponent = /** @class */ (function () {
             selector: 'app-form-validate',
             template: __webpack_require__(/*! ./form-validate.component.html */ "./src/app/ui/form-validate/form-validate.component.html"),
             styles: [__webpack_require__(/*! ./form-validate.component.scss */ "./src/app/ui/form-validate/form-validate.component.scss")]
-        })
+        }),
+        __metadata("design:paramtypes", [])
     ], FormValidateComponent);
     return FormValidateComponent;
 }());
@@ -599,19 +606,21 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/ui/layout/layout.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./header/header.component */ "./src/app/ui/header/header.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/ui/footer/footer.component.ts");
-/* harmony import */ var _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./prince-page/prince-page.component */ "./src/app/ui/prince-page/prince-page.component.ts");
-/* harmony import */ var _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./related-articles/related-articles.component */ "./src/app/ui/related-articles/related-articles.component.ts");
-/* harmony import */ var _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./article-slider/article-slider.component */ "./src/app/ui/article-slider/article-slider.component.ts");
-/* harmony import */ var _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./form-validate/form-validate.component */ "./src/app/ui/form-validate/form-validate.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/ui/layout/layout.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./header/header.component */ "./src/app/ui/header/header.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/ui/footer/footer.component.ts");
+/* harmony import */ var _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./prince-page/prince-page.component */ "./src/app/ui/prince-page/prince-page.component.ts");
+/* harmony import */ var _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./related-articles/related-articles.component */ "./src/app/ui/related-articles/related-articles.component.ts");
+/* harmony import */ var _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./article-slider/article-slider.component */ "./src/app/ui/article-slider/article-slider.component.ts");
+/* harmony import */ var _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./form-validate/form-validate.component */ "./src/app/ui/form-validate/form-validate.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -629,10 +638,11 @@ var UiModule = /** @class */ (function () {
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
                 _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbCarouselModule"]
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbCarouselModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
             ],
-            declarations: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_3__["LayoutComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__["FooterComponent"], _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_6__["PrincePageComponent"], _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_7__["RelatedArticlesComponent"], _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_8__["ArticleSliderComponent"], _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_9__["FormValidateComponent"]],
-            exports: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_3__["LayoutComponent"]]
+            declarations: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_4__["LayoutComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_5__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_6__["FooterComponent"], _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_7__["PrincePageComponent"], _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_8__["RelatedArticlesComponent"], _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_9__["ArticleSliderComponent"], _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_10__["FormValidateComponent"]],
+            exports: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_4__["LayoutComponent"]]
         })
     ], UiModule);
     return UiModule;

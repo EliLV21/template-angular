@@ -6,3 +6,6 @@
 body{
   font-family: 'Montserrat', sans-serif !important;
 }
+.row{
+  margin: 0;
+}
