@@ -1,0 +1,52 @@
+.prince-page{
+  background-image: url('/assets/img/Header3.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: crimson;
+  width: 100%;
+  height: 600px;
+  padding: 0;
+  margin: 0;
+}
+.cont-title{
+  position: relative;
+  top: 350px;
+  .title-name{
+    font-size: 72px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -2.9px;
+    text-align: left;
+  }
+  .subtitle{
+    font-size: 24px;
+    font-weight: 300;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.33;
+    letter-spacing: normal;
+  }
+  .button-bg{
+    width: 160px;
+    height: 44px;
+    box-shadow: 0px 12px 24px 0 rgba(1, 10, 38, 0.32);
+    background-color: #19191a;
+    border-style: solid;
+    border-width: 3px;
+    border-image-source: linear-gradient(340deg, #589ad2, #889ff3 50%, #d3d1ef);
+    border-image-slice: 1;
+    span{
+      font-size: 11px;
+      font-weight: bold;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: normal;
+      letter-spacing: 0.7px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}

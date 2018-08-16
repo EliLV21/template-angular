@@ -1,0 +1,39 @@
+.row{
+  padding: 80px 15px;
+  .tag-info{
+    width: 255px;
+    height: 255px;
+    border: solid 2px #e1e2e6;
+    padding: 25px 20px;
+    &.active{
+      color: #fff;
+      width: 256px;
+      height: 256px;
+      box-shadow: 0px 25px 35px 0 rgba(16, 16, 69, 0.2);
+      background-color: rgba(19, 19, 23, 0.75);
+      border-style: solid;
+      border-width: 4px;
+      border-image-source: linear-gradient(100deg, #657bdc, #bea0e7 50%, #f5d1fd);
+      border-image-slice: 1;
+    }
+    p{
+      height: 150px;
+      font-size: 17.5px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.63;
+      letter-spacing: -0.3px;
+    }
+    span{
+      font-size: 12px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.33;
+      letter-spacing: normal;
+      text-align: left;
+      color: #7f818a;
+    }
+  }
+}

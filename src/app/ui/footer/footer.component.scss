@@ -1,0 +1,41 @@
+.bg-dark{
+  color: #fff;
+  padding: 1rem 1.5rem;
+  .col-sm-12{
+    p{
+      font-size: 16px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.71;
+      letter-spacing: normal;
+      text-align: left;
+    }
+  }
+  .col-sm-5{
+    h4{
+      height: 50px;
+    }
+    p{
+      font-size: 14px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.27;
+      letter-spacing: normal;
+      text-align: left;
+    }
+  }
+  .col-sm-4{
+    p{
+      font-size: 13px;
+      font-weight: normal;
+      font-style: normal;
+      font-stretch: normal;
+      line-height: 1.27;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+    }
+  }
+}
