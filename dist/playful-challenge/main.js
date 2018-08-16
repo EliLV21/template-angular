@@ -91,12 +91,12 @@ var AppComponent = /** @class */ (function () {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AppModule", function() { return AppModule; });
-/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./ui/ui.module */ "./src/app/ui/ui.module.ts");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _ui_ui_module__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./ui/ui.module */ "./src/app/ui/ui.module.ts");
-/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
-/* harmony import */ var ngx_slick_carousel__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ngx-slick-carousel */ "./node_modules/ngx-slick-carousel/fesm5/ngx-slick-carousel.js");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm5/platform-browser.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -113,15 +113,15 @@ var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"])({
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             declarations: [
                 _app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]
             ],
             imports: [
-                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
-                _ui_ui_module__WEBPACK_IMPORTED_MODULE_3__["UiModule"],
-                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_4__["NgbModule"],
-                ngx_slick_carousel__WEBPACK_IMPORTED_MODULE_5__["SlickCarouselModule"]
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_3__["NgbCarouselModule"].forRoot(),
+                _angular_platform_browser__WEBPACK_IMPORTED_MODULE_4__["BrowserModule"],
+                _ui_ui_module__WEBPACK_IMPORTED_MODULE_1__["UiModule"],
+                _angular_common_http__WEBPACK_IMPORTED_MODULE_5__["HttpClientModule"]
             ],
             providers: [],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]]
@@ -141,7 +141,7 @@ var AppModule = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- <ngb-carousel *ngIf=\"images\" [showNavigationArrows]=\"showNavigationArrows\" [showNavigationIndicators]=\"showNavigationIndicators\">\n  <ng-template ngbSlide *ngFor=\"let image of images\">\n    <img [src]=\"image\" alt=\"Random slide\">\n    <div class=\"carousel-caption\">\n      <h3>No mouse navigation</h3>\n      <p>This carousel hides navigation arrows and indicators.</p>\n    </div>\n  </ng-template>\n</ngb-carousel>\n\n<hr>\n\n<div class=\"btn-group\" role=\"group\" aria-label=\"Carousel toggle controls\">\n  <button type=\"button\" (click)=\"showNavigationArrows = !showNavigationArrows\" class=\"btn btn-outline-dark btn-sm\">Toggle navigation arrows</button>\n  <button type=\"button\" (click)=\"showNavigationIndicators = !showNavigationIndicators\" class=\"btn btn-outline-dark btn-sm\">Toggle navigation indicators</button>\n</div> -->\n"
+module.exports = "<div class=\"article-slider\">\n  <ngb-carousel *ngIf=\"images\">\n  <ng-template ngbSlide>\n    <img [src]=\"images[0]\" alt=\"Random first slide\">\n  </ng-template>\n  <ng-template ngbSlide>\n    <img [src]=\"images[1]\" alt=\"Random second slide\">\n  </ng-template>\n  <ng-template ngbSlide>\n    <img [src]=\"images[2]\" alt=\"Random third slide\">\n  </ng-template>\n</ngb-carousel>\n</div>\n"
 
 /***/ }),
 
@@ -152,7 +152,7 @@ module.exports = "<!-- <ngb-carousel *ngIf=\"images\" [showNavigationArrows]=\"s
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".article-slider {\n  background-color: #f5f5f7;\n  width: 100%;\n  height: 700px; }\n"
+module.exports = ".article-slider {\n  background-color: #f5f5f7;\n  width: 100%;\n  height: 700px;\n  padding-top: 90px; }\n\n.slide {\n  width: 80%;\n  margin-left: 10%;\n  padding-left: 18px; }\n"
 
 /***/ }),
 
@@ -167,6 +167,8 @@ module.exports = ".article-slider {\n  background-color: #f5f5f7;\n  width: 100%
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ArticleSliderComponent", function() { return ArticleSliderComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -177,10 +179,23 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
 var ArticleSliderComponent = /** @class */ (function () {
-    function ArticleSliderComponent() {
+    function ArticleSliderComponent(_http) {
+        this._http = _http;
     }
     ArticleSliderComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this._http.get('https://picsum.photos/list')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_2__["map"])(function (images) { return _this._randomImageUrls(images); }))
+            .subscribe(function (images) { return _this.images = images; });
+    };
+    ArticleSliderComponent.prototype._randomImageUrls = function (images) {
+        return [1, 2, 3].map(function () {
+            var randomId = images[Math.floor(Math.random() * images.length)].id;
+            return "https://picsum.photos/900/500?image=" + randomId;
+        });
     };
     ArticleSliderComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -188,7 +203,7 @@ var ArticleSliderComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./article-slider.component.html */ "./src/app/ui/article-slider/article-slider.component.html"),
             styles: [__webpack_require__(/*! ./article-slider.component.scss */ "./src/app/ui/article-slider/article-slider.component.scss")]
         }),
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
     ], ArticleSliderComponent);
     return ArticleSliderComponent;
 }());
@@ -583,13 +598,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UiModule", function() { return UiModule; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/fesm5/common.js");
-/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/ui/layout/layout.component.ts");
-/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./header/header.component */ "./src/app/ui/header/header.component.ts");
-/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/ui/footer/footer.component.ts");
-/* harmony import */ var _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./prince-page/prince-page.component */ "./src/app/ui/prince-page/prince-page.component.ts");
-/* harmony import */ var _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./related-articles/related-articles.component */ "./src/app/ui/related-articles/related-articles.component.ts");
-/* harmony import */ var _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./article-slider/article-slider.component */ "./src/app/ui/article-slider/article-slider.component.ts");
-/* harmony import */ var _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./form-validate/form-validate.component */ "./src/app/ui/form-validate/form-validate.component.ts");
+/* harmony import */ var _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @ng-bootstrap/ng-bootstrap */ "./node_modules/@ng-bootstrap/ng-bootstrap/fesm5/ng-bootstrap.js");
+/* harmony import */ var _layout_layout_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./layout/layout.component */ "./src/app/ui/layout/layout.component.ts");
+/* harmony import */ var _header_header_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./header/header.component */ "./src/app/ui/header/header.component.ts");
+/* harmony import */ var _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./footer/footer.component */ "./src/app/ui/footer/footer.component.ts");
+/* harmony import */ var _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./prince-page/prince-page.component */ "./src/app/ui/prince-page/prince-page.component.ts");
+/* harmony import */ var _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./related-articles/related-articles.component */ "./src/app/ui/related-articles/related-articles.component.ts");
+/* harmony import */ var _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./article-slider/article-slider.component */ "./src/app/ui/article-slider/article-slider.component.ts");
+/* harmony import */ var _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./form-validate/form-validate.component */ "./src/app/ui/form-validate/form-validate.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -605,16 +621,18 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var UiModule = /** @class */ (function () {
     function UiModule() {
     }
     UiModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
-                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"]
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _ng_bootstrap_ng_bootstrap__WEBPACK_IMPORTED_MODULE_2__["NgbCarouselModule"]
             ],
-            declarations: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_2__["LayoutComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_3__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_4__["FooterComponent"], _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_5__["PrincePageComponent"], _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_6__["RelatedArticlesComponent"], _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_7__["ArticleSliderComponent"], _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_8__["FormValidateComponent"]],
-            exports: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_2__["LayoutComponent"]]
+            declarations: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_3__["LayoutComponent"], _header_header_component__WEBPACK_IMPORTED_MODULE_4__["HeaderComponent"], _footer_footer_component__WEBPACK_IMPORTED_MODULE_5__["FooterComponent"], _prince_page_prince_page_component__WEBPACK_IMPORTED_MODULE_6__["PrincePageComponent"], _related_articles_related_articles_component__WEBPACK_IMPORTED_MODULE_7__["RelatedArticlesComponent"], _article_slider_article_slider_component__WEBPACK_IMPORTED_MODULE_8__["ArticleSliderComponent"], _form_validate_form_validate_component__WEBPACK_IMPORTED_MODULE_9__["FormValidateComponent"]],
+            exports: [_layout_layout_component__WEBPACK_IMPORTED_MODULE_3__["LayoutComponent"]]
         })
     ], UiModule);
     return UiModule;
